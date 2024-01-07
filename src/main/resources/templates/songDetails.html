@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Song Detail</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Song Details</title>
 </head>
 <body>
-<h1>Prova Song Detail</h1>
+<!-- Attributi utilizzabili: SongId (int), song (Song) -->
+<h1>Song Details</h1>
+<p th:text="|Autore: ${song.author}|"></p>
+<p th:text="|Titolo: ${song.title}|"></p>
+<a th:href="@{'/songs'}">Back to Song List</a>
 </body>
 </html>

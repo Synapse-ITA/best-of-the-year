@@ -2,13 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Songs</title>
 </head>
 <body>
 <h1>Songs List</h1>
 <ul th:if="${songs}">
     <li th:each="song : ${songs}">
-        <span th:text="${song.title}"></span> by <span th:text="${song.author}"></span> - ID song: <span th:text="${song.id}"></span>
+        <a th:href="@{'/songs/' + ${song.id} }">
+            <span th:text="${song.title}"></span> by <span th:text="${song.author}"></span> - ID song: <span th:text="${song.id}"></span>
+        </a>
     </li>
 </ul>
 
